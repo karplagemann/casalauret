@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*----------------------------------------
+SOBREESCRIBIENDO  LOS ESTILOS DE BOOTSTRAP
+------------------------------------------*/
+.bg-primary {
+  background-color: #10a0a9 !important;
+}
+
+.text-primary {
+  color: #10a0a9 !important;
+}
+
+.btn-primary {
+  background-color: #10a0a9 !important;
+  border-color: #10a0a9 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0c747a !important;
+}
+
+.btn-primary:active {
+  background-color: #07484c !important;
+  border-color: #10a0a9 !important;
+}
+
+.btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(16, 160, 169, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(16, 160, 169, 0.5) !important;
+}
+
+.bg-secondary {
+  background-color: #f6a000 !important;
+}
+
+.text-secondary {
+  color: #f6a000 !important;
+}
+
+.btn-secondary {
+  background-color: #f6a000 !important;
+  border-color: #905e00 !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #c37f00 !important;
+}
+
+.btn-secondary:active {
+  background-color: #905e00 !important;
+  border-color: #5d3c00 !important;
+}
+
+.btn-secondary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(246, 160, 0, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(246, 160, 0, 0.5) !important;
+}
+
+html {
+  color: #44484a;
+  font-size: 13px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 0 10px #0c0c0c3b;
+          box-shadow: 0 0 10px #0c0c0c3b;
+}
+
+/*------------------------
+SHOW DE LOS MEDIAS QUERIES
+------------------------*/
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
