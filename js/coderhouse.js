@@ -36,53 +36,63 @@
 
 // DESAFIO N2 - SIMULADOR INTERACTIVO
 
-alert ("Desafio entregable n2 de Karen Plagemann")
-alert ("Simulador de precios - Efectivo o tarjeta")
+alert("Desafio entregable n2 de Karen Plagemann")
+alert("Simulador de precios - Efectivo o tarjeta")
 
 //Funcion para solicitar valor a simular
-function solicitarValor() {
-    precio = prompt ("Ingrese el valor a simular")
-    while (precio === "") {
-        alert ("Usted no ingreso ningun valor");
-        precio = prompt ("Por favor ingrese un valor");
-    }
-    return precio;
-}
-solicitarValor ();
-alert ("El valor ingresado es $ "+ precio)
+
+const solicitarValor = () => {
+  precio = Number(prompt("Ingrese el valor a simular"));
+  while (isNaN(precio) || "" == precio) {
+    precio = Number(prompt("Por favor ingrese un valor valido"));
+  }
+  return precio;
+};
+solicitarValor();
+console.log(`El número ingresado es: ${precio}`);
 
 
 //Funcion de modo de pago
-function solicitarModoDePago(){
-    modoDePago = parseInt(prompt("Seleccione modo de pago\n 1)Escriba 1 por pago en Efectivo \n 2) Escriba 2 por pago en Tarjeta"));
+function solicitarModoDePago() {
+    modoDePago = parseInt(prompt("Seleccione modo de pago\n 1) Escriba 1 por pago en Efectivo \n 2) Escriba 2 por pago en Tarjeta"));
     while (isNaN(modoDePago) || modoDePago > 2) {
         alert("Usted ingreso un valor invalido");
-        modoDePago = parseInt(prompt("Seleccione modo de pago\n 1)Escriba 1 por pago en Efectivo \n 2) Escriba 2 por pago en Tarjeta"));
+        modoDePago = parseInt(prompt("Seleccione modo de pago\n 1) Escriba 1 por pago en Efectivo \n 2) Escriba 2 por pago en Tarjeta"));
     }
     return modoDePago;
 }
 
-solicitarModoDePago ();
+solicitarModoDePago();
 
-//Calcular precio
-let efectivo =1
-let tarjeta=2
-let dto1=0.80
-let dto2=0.94
-let recargo1=1.60
-let precioNeto = precio*dto1*dto2
-let precioTarjeta =precio*recargo1
 
-function calcularPrecio(){
-    if (modoDePago ==1) {
-        alert("El modo de pago es Efectivo\nEl precio cargado es $ " + precio + "\nSu precio final es $ " + precioNeto);
+const efectivo = 1
+const tarjeta = 2
+
+
+function calcularPrecio() {
+    let dto1 = 0.80;
+    let dto2 = 0.94;
+    let recargo1 = 1.60;
+    let precioFinal = 0;
+
+    if (modoDePago == efectivo) {
+        precioFinal = Number(precio * dto1 * dto2).toFixed(2);
+    } else if (modoDePago == tarjeta) {
+        precioFinal = Number(precio * recargo1).toFixed(2);
     }
-    if (modoDePago ==2) {
-        alert("El modo de pago es Efectivo\nEl precio cargado es $ " + precio + "\nSu precio final es $ " + precioTarjeta);
-    }
+    
+    return precioFinal;
 }
 
-calcularPrecio ();
+function mostrarPrecio() {
+    let modoDePagoText = ''
+    if(modoDePago == efectivo) modoDePagoText = 'Efectivo';
+    if(modoDePago == tarjeta) modoDePagoText = 'Tarjeta';
 
+    let precioF = calcularPrecio();
+    alert("El modo de pago es " + modoDePagoText + "\nEl precio cargado es $ " + precio + "\nSu precio final es $ " + precioF);
+}
+
+mostrarPrecio();
 
 
