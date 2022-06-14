@@ -35,7 +35,11 @@
 
 // DESAFIO N2 - SIMULADOR INTERACTIVO
 
+<<<<<<< HEAD
 alert("Desafio entregable n3 de Karen Plagemann")
+=======
+alert("Desafio entregable n2 de Karen Plagemann")
+>>>>>>> 5a66bcc98097b1bb1cd3d5cfe2daa4915a9766ad
 alert("Simulador de precios - Efectivo o tarjeta")
 
 //Funcion para solicitar valor a simular
@@ -79,7 +83,6 @@ function calcularPrecio() {
     } else if (modoDePago == tarjeta) {
         precioFinal = Number(precio * recargo1).toFixed(2);
     }
-    
     return precioFinal;
 }
 
