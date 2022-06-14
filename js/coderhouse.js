@@ -1,17 +1,4 @@
-// OPERACIONES MATEMATICAS
-
-let numeroA = 100;
-let numeroB = 200;
-let resultado1= numeroA + numeroB;
-
-console.log (resultado1);
-
-// DESAFIO N1
-
-alert ("Desafio entregable n1 de Karen Plagemann");
 alert ("Para poder visualizar este sitio debe ingresar con los siguientes datos: \nUsuario:tutor \nClave:coder")
-
-
 let usuario = prompt("Ingrese Usuario:");
 while( usuario != "tutor" ){
     alert("Usted ingreso usuario: " + usuario + ", ese usuario es incorrecto :(" + "\nPor favor intente nuevamente");
@@ -117,6 +104,8 @@ while (entrada != 'FIN') {
 for (let index = 0; index < producto.length; index++) {
     alert("Tu producto N°" + index + ": " + producto[index]);
 }
-
-
+const resultado = producto +" ,";
+alert("Estos son los productos de tu lista de compras: "+resultado)
+const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
+alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
 
