@@ -80,14 +80,6 @@ function mostrarPrecio() {
 
 mostrarPrecio();
 
-class Tienda{
-    constructor(nombre, pais){
-        this.nombre = nombre;
-        this.pais = pais;
-    }
-}
-
-const tienda1 = new Tienda("KAREN","ARGENTINA");
 
 
 
@@ -109,3 +101,5 @@ alert("Estos son los productos de tu lista de compras: "+resultado)
 const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
 alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
 
+
+//--------------------------------------------------------------------------------------------
