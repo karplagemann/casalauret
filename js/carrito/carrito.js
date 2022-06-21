@@ -75,7 +75,13 @@ class detallePedido {
     // SU RETORNO
     return detalle;
   }
-}
+  //FUNCION - METODO
+  agregarCantidad(cantidad) {
+    return this.cantidad += cantidad;
+  }
+  }
+
+
 
 // USO EL OBJETO
 const detallePedido1 = new detallePedido(producto1, 2);

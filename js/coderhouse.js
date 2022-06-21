@@ -89,7 +89,7 @@ mostrarPrecio();
 alert  ("Ahora carguemos productos")
 let entrada = prompt("Ingresa un producto");
 const producto = [];
-while (entrada != 'FIN') {
+while (entrada != 'FIN' && entrada !="") { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
     producto.push(entrada);
     entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
 }
