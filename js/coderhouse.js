@@ -126,19 +126,34 @@ const arrayProductosPrueba = [
         nombre: "BOBINA",
         imagen: "images/ofertas/opticas.PNG",
         descripcion:"Optica gol trend",
-        textAlt: "optica arteb"
+        textAlt: "optica arteb",
+        precioWeb: 4000,
+        precioLista: 5000
     },
     {
         nombre: "CABLE DE ENCENDIDO",
         imagen: "https://www.motoryracing.com/images/noticias/23000/23525/7.jpg",
         descripcion:"cable de  gol trend 2013 en adelante",
-        textAlt: "cable bosch"
+        textAlt: "cable bosch",
+        precioWeb: 8000,
+        precioLista: 51000
+        
     },
     {
         nombre: "BUJIA DE ENCENDIDO",
         imagen: "https://http2.mlstatic.com/D_NQ_NP_957283-MLA50043409172_052022-O.webp",
         descripcion:"esto es una descripcion de bujia",
-        textAlt: "bujia alemana"
+        textAlt: "bujia alemana",
+        precioWeb: 400,
+        precioLista: 3000
+    },
+    {
+        nombre: "SONDA LAMBDA",
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_666362-MLA48885126593_012022-O.webp",
+        descripcion:"sonda para bmw",
+        textAlt: "sonda bosch alemana",
+        precioWeb: 410,
+        precioLista: 7000
     }
 ]
 
@@ -159,8 +174,8 @@ for(let p of arrayProductosPrueba){
                     <div class="badge bg-primary text-wrap fw-normal text-uppercase mb-2">
                         OFERTA DEL MES
                     </div>
-                    <div class="text-decoration-line-through small">$ 9.500,00</div>
-                    <div class="fw-bold mb-2">$ 4.000,00 <span class="text-success small fst-italic fw-normal" >50% OFF</span></div>
+                    <div class="text-decoration-line-through small">$ ${p.precioLista}</div>
+                    <div class="fw-bold mb-2">$ ${p.precioWeb} <span class="text-success small fst-italic fw-normal" >50% OFF</span></div>
                     <h5 class="card-title h6 fw-bold text-black opacity-75">${p.nombre}</h5>
                     <div class="card-text">
                     ${p.descripcion}</div>
