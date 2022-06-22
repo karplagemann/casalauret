@@ -104,21 +104,30 @@ saludar(nombre);
 // // APLICANDO EL ARRAY
 
 
-// alert  ("Ahora carguemos productos")
-// let entrada = prompt ("carga tu producto")
+alert  ("Ahora carguemos productos")
+let entrada = prompt ("carga tu producto")
 
-// const producto = [];
-// while (entrada != 'FIN' || entrada =="") { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
+const producto = [];
+// while (entrada != 'FIN') { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
 //     producto.push(entrada);
 //     entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
 // }
-// for (let index = 0; index < producto.length; index++) {
-//     alert("Tu producto N°" + index + ": " + producto[index]);
-// }
-// const resultado = producto +" ,";
-// alert("Estos son los productos de tu lista de compras: "+resultado)
-// const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
-// alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
+while (entrada !=="FIN") {
+    if (entrada===""){
+        entrada = prompt ("Escribi algo capo")
+        producto.push(entrada);
+    } else {
+        producto.push(entrada);
+        entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
+    }
+}
+for (let index = 0; index < producto.length; index++) {
+    alert("Tu producto N°" + index + ": " + producto[index]);
+}
+const resultado = producto +" ,";
+alert("Estos son los productos de tu lista de compras: "+resultado)
+const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
+alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
 
 
 const arrayProductosPrueba = [
