@@ -83,24 +83,91 @@
 
 
 
-//APLICANDO EL ARRAY
-
-
-alert  ("Ahora carguemos productos")
-let entrada = prompt ("carga tu producto")
-const producto = [];
-while (entrada != 'FIN' || entrada =="") { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
-    producto.push(entrada);
-    entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
-    
-}
-for (let index = 0; index < producto.length; index++) {
-    alert("Tu producto N°" + index + ": " + producto[index]);
-}
-const resultado = producto +" ,";
-alert("Estos son los productos de tu lista de compras: "+resultado)
-const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
-alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
 
 
 //--------------------------------------------------------------------------------------------
+
+
+// DOM
+// SALUDO A MI USUARIO
+
+let nombre = prompt("cual es tu nombre?");
+while (nombre == "") {
+    nombre = prompt("cual es tu nombre, no dejes vacio!?");
+}
+const saludar = (nombre) => {
+  alert(`Hola ${nombre}! Como estas?`);
+};
+saludar(nombre);
+
+
+// // APLICANDO EL ARRAY
+
+
+// alert  ("Ahora carguemos productos")
+// let entrada = prompt ("carga tu producto")
+
+// const producto = [];
+// while (entrada != 'FIN' || entrada =="") { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
+//     producto.push(entrada);
+//     entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
+// }
+// for (let index = 0; index < producto.length; index++) {
+//     alert("Tu producto N°" + index + ": " + producto[index]);
+// }
+// const resultado = producto +" ,";
+// alert("Estos son los productos de tu lista de compras: "+resultado)
+// const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
+// alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
+
+
+const arrayProductosPrueba = [
+    {
+        nombre: "BOBINA",
+        imagen: "images/ofertas/opticas.PNG",
+        descripcion:"Optica gol trend",
+        textAlt: "optica arteb"
+    },
+    {
+        nombre: "CABLE DE ENCENDIDO",
+        imagen: "https://www.motoryracing.com/images/noticias/23000/23525/7.jpg",
+        descripcion:"cable de  gol trend 2013 en adelante",
+        textAlt: "cable bosch"
+    },
+    {
+        nombre: "BUJIA DE ENCENDIDO",
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_957283-MLA50043409172_052022-O.webp",
+        descripcion:"esto es una descripcion de bujia",
+        textAlt: "bujia alemana"
+    }
+]
+
+
+// BUSCO EL CONTENEDOR PRINCIPAL
+const mainCont = document.querySelector(".containerDom");
+
+// Prueba InnerHTML
+for(let p of arrayProductosPrueba){
+    mainCont.innerHTML += `
+        <div class="row">
+            <article id="producto1" class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="card">
+                    <div class="border-bottom d-flex justify-content-center align-content-center">
+                        <img class="card-img-top  w-50 pt-2 pb-2"   src="${p.imagen}" alt="${p.textAlt}">
+                    </div>
+                <div class="card-body">
+                    <div class="badge bg-primary text-wrap fw-normal text-uppercase mb-2">
+                        OFERTA DEL MES
+                    </div>
+                    <div class="text-decoration-line-through small">$ 9.500,00</div>
+                    <div class="fw-bold mb-2">$ 4.000,00 <span class="text-success small fst-italic fw-normal" >50% OFF</span></div>
+                    <h5 class="card-title h6 fw-bold text-black opacity-75">${p.nombre}</h5>
+                    <div class="card-text">
+                    ${p.descripcion}</div>
+                </div>
+                <button type="button" class="btn btn-dark btn-sm">Agregar al Carrito</button>
+                </div>
+            </article>
+    </setion>
+    `
+}
