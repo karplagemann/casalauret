@@ -159,12 +159,11 @@ const arrayProductosPrueba = [
 
 
 // BUSCO EL CONTENEDOR PRINCIPAL
-const mainCont = document.querySelector(".containerDom");
+const mainCont = document.querySelector(".rowContainer");
 
 // Prueba InnerHTML
 for(let p of arrayProductosPrueba){
     mainCont.innerHTML += `
-        <div class="row">
             <article id="producto1" class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
                 <div class="card">
                     <div class="border-bottom d-flex justify-content-center align-content-center">
@@ -182,7 +181,5 @@ for(let p of arrayProductosPrueba){
                 </div>
                 <button type="button" class="btn btn-dark btn-sm">Agregar al Carrito</button>
                 </div>
-            </article>
-    </setion>
     `
 }
