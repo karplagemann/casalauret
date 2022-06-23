@@ -91,43 +91,39 @@
 // DOM
 // SALUDO A MI USUARIO
 
-let nombre = prompt("cual es tu nombre?");
-while (nombre == "") {
-    nombre = prompt("cual es tu nombre, no dejes vacio!?");
-}
-const saludar = (nombre) => {
-  alert(`Hola ${nombre}! Como estas?`);
-};
-saludar(nombre);
-
-
-// // APLICANDO EL ARRAY
-
-
-alert  ("Ahora carguemos productos")
-let entrada = prompt ("carga tu producto")
-
-const producto = [];
-// while (entrada != 'FIN') { //Le agrego la validacion de que no este vacio para que no cargue producto sin nombre.
-//     producto.push(entrada);
-//     entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
+// let nombre = prompt("cual es tu nombre?");
+// while (nombre == "") {
+//     nombre = prompt("cual es tu nombre, no dejes vacio!?");
 // }
-while (entrada !=="FIN") {
-    if (entrada===""){
-        entrada = prompt ("Escribi algo capo")
-        producto.push(entrada);
-    } else {
-        producto.push(entrada);
-        entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
-    }
-}
-for (let index = 0; index < producto.length; index++) {
-    alert("Tu producto N°" + index + ": " + producto[index]);
-}
-const resultado = producto +" ,";
-alert("Estos son los productos de tu lista de compras: "+resultado)
-const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
-alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
+// const saludar = (nombre) => {
+//   alert(`Hola ${nombre}! Como estas?`);
+// };
+// saludar(nombre);
+
+
+// // // APLICANDO EL ARRAY
+
+
+// alert  ("Ahora carguemos productos")
+// let entrada = prompt ("carga tu producto")
+
+// const producto = [];
+// while (entrada !=="FIN") {
+//     if (entrada===""){
+//         entrada = prompt ("Escribi algo capo")
+//         producto.push(entrada);
+//     } else {
+//         producto.push(entrada);
+//         entrada = prompt("Sigue cargando productos, cuando quieras finalizar escribe la palabra FIN");
+//     }
+// }
+// for (let index = 0; index < producto.length; index++) {
+//     alert("Tu producto N°" + index + ": " + producto[index]);
+// }
+// const resultado = producto +" ,";
+// alert("Estos son los productos de tu lista de compras: "+resultado)
+// const resultadoMayor = producto.filter (palabra=>palabra.length >=6);
+// alert("Estos productos tienen mas de 6 caracteres: "+resultadoMayor)
 
 
 const arrayProductosPrueba = [
@@ -188,7 +184,28 @@ for(let p of arrayProductosPrueba){
                     <div class="card-text">
                     ${p.descripcion}</div>
                 </div>
-                <button type="button" class="btn btn-dark btn-sm">Agregar al Carrito</button>
+                <button type="button" class="btn btn-dark btn-sm btnNucleo" id="btnNucleo">Agregar al Carrito</button>
                 </div>
     `
 }
+
+// // // //CREANDO EL BOTÓN DESDE JS
+// // const btnNucleo = document.createElement("button");
+// // // //ASIGNAR ID AL BOTÓN
+// // btnNucleo.id = 'btnNucleo';
+// // //ASIGNAR EL INTERIOR DEL BOTÓN
+// // btnNucleo.innerHTML = 'CACA JEJE';
+// //ESCUCHAR EL EVENTO CLICK
+// btnNucleo.addEventListener('click', function () {
+//     const h3 = document.createElement('h3');
+//     h3.innerHTML = 'Apretaste el boton de Agregar al carrito';
+//     document.body.appendChild(h3);
+// })
+// //AGREGAR EL BOTON AL DOM
+// document.body.appendChild(btnNucleo);
+
+const buttons = document.querySelectorAll('.btnNucleo');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => alert('Clickeaste el boton Agregar al Carrito!'));
+});
