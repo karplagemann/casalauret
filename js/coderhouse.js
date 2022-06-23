@@ -184,27 +184,14 @@ for(let p of arrayProductosPrueba){
                     <div class="card-text">
                     ${p.descripcion}</div>
                 </div>
-                <button type="button" class="btn btn-dark btn-sm btnNucleo" id="btnNucleo">Agregar al Carrito</button>
+                <button type="button" class="btn btn-dark btn-sm btnAgregarAlCarrito">Agregar al Carrito</button>
                 </div>
     `
 }
 
-// // // //CREANDO EL BOTÓN DESDE JS
-// // const btnNucleo = document.createElement("button");
-// // // //ASIGNAR ID AL BOTÓN
-// // btnNucleo.id = 'btnNucleo';
-// // //ASIGNAR EL INTERIOR DEL BOTÓN
-// // btnNucleo.innerHTML = 'CACA JEJE';
-// //ESCUCHAR EL EVENTO CLICK
-// btnNucleo.addEventListener('click', function () {
-//     const h3 = document.createElement('h3');
-//     h3.innerHTML = 'Apretaste el boton de Agregar al carrito';
-//     document.body.appendChild(h3);
-// })
-// //AGREGAR EL BOTON AL DOM
-// document.body.appendChild(btnNucleo);
 
-const buttons = document.querySelectorAll('.btnNucleo');
+
+const buttons = document.querySelectorAll('.btnAgregarAlCarrito');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => alert('Clickeaste el boton Agregar al Carrito!'));
